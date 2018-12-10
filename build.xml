@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="anblt-ant-contrib" default="test">
+
+	<property environment="env" />
+	<property name="lib.dir" value="lib" />
+	<property name="build.dir" value="build" />
+	<property name="data.dir" value="data" />
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}"/>
+	</target>
+
+	<target name="clean" description="Delete all generated files">
+		<delete failonerror="false" includeEmptyDirs="true">
+			<fileset dir="${build.dir}" />
+	        </delete>
+	</target>
+
+	<target name="register">
+		<typedef resource="anblt/ant/contrib/typedef.properties">
+			<classpath>
+				<fileset dir="${lib.dir}" includes="*.jar" />
+				<path location="${ant.project.name}.jar" />
+			</classpath>
+		</typedef>
+	</target>
+
+	<target name="striphtmlcomments" depends="register">
+		<copy todir="${build.dir}">
+			<fileset dir="${data.dir}">
+				<include name="**/*.html" />
+			</fileset>
+			<filterchain>
+				<striphtmlcomments />
+			</filterchain>
+		</copy>
+	</target>
+
+	<target name="checksummapper" depends="register">
+		<copy todir="${build.dir}">
+			<fileset dir="${data.dir}">
+				<include name="**/*.txt" />
+			</fileset>
+			<checksummapper dir="${data.dir}" algo="SHA-1" />
+		</copy>
+	</target>
+
+	<target name="checksumselector" depends="checksummapper">
+		<pathconvert property="findmatches" pathsep="${line.separator}">
+			<fileset dir="${build.dir}">
+				<include name="**/*.txt" />
+				<checksumselector algo="SHA-1" />
+			</fileset>
+		</pathconvert>
+		<echo>${findmatches}</echo>
+	</target>
+
+	<target name="test" depends="init,striphtmlcomments,checksummapper,checksumselector">
+	</target>
+</project>
