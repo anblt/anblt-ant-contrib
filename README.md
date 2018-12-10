@@ -12,25 +12,27 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 ### Install .jar + Register ant tasks
 
 1. Download .jar file
-1. You now have the choice:
-1.1 Copy the .jar file to the lib directory of your Ant installation (e.g. /usr/share/ant/lib/),
-    or on your CLASSPATH environment variable. 
-    If you want to use one of the tasks in your project, add the line
-    ```
-    <taskdef resource="anblt/ant/contrib/typedef.properties"/>
-    ```
-    to your build file. This will register the new tasks.
 
-1.1 Keep the .jar in a separate location.
-    You now have to tell Ant explicitly where to find it.
-    ```
-    <typedef resource="anblt/ant/contrib/typedef.properties">
-      <classpath>
-        <fileset dir="${lib.dir}" includes="*.jar" />
-        <pathelement location="/path/to/anblt-ant-contrib.jar"/>
-      </classpath>
-    </typedef>
-    ```
+1. You now have the choice:
+
+   - Copy the .jar file to the lib directory of your Ant installation (e.g. /usr/share/ant/lib/),
+     or on your CLASSPATH environment variable. 
+     If you want to use one of the tasks in your project, add the line
+     ```
+     <taskdef resource="anblt/ant/contrib/typedef.properties"/>
+     ```
+     to your build file. This will register the new tasks.
+
+   - Keep the .jar in a separate location.
+     You now have to tell Ant explicitly where to find it.
+     ```
+     <typedef resource="anblt/ant/contrib/typedef.properties">
+       <classpath>
+         <fileset dir="${lib.dir}" includes="*.jar" />
+         <pathelement location="/path/to/anblt-ant-contrib.jar"/>
+       </classpath>
+     </typedef>
+     ```
 
 
 ### Usage
@@ -41,8 +43,8 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 
 ### Documentation
 
-- [x] [<striphtmlcomments>/<stripxmlcomments>](docs/StripHtmlComments.md)
-- [x] [<checksummapper>](docs/ChecksumMapper.md)
-- [x] [<checksumselector>](docs/ChecksumSelector.md)
+- [x] [`<striphtmlcomments>`/`<stripxmlcomments>`](docs/StripHtmlComments.md)
+- [x] [`<checksummapper>`](docs/ChecksumMapper.md)
+- [x] [`<checksumselector>`](docs/ChecksumSelector.md)
 
 

@@ -6,7 +6,6 @@
 
 ### Usage
 
-    ```
     <pathconvert property="findmatches" pathsep="${line.separator}">
     	<fileset dir="${build.dir}">
     		<include name="**/*.txt" />
@@ -14,6 +13,3 @@
     	</fileset>
     </pathconvert>
     <echo>${findmatches}</echo>
-    ```
-
-

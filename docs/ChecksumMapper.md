@@ -6,12 +6,9 @@
 
 ### Usage
 
-    ```
     <copy todir="${build.dir}">
     	<fileset dir="${data.dir}">
     		<include name="**/*.txt" />
     	</fileset>
     	<checksummapper dir="${data.dir}" algo="SHA-1" />
     </copy>
-    ```
-

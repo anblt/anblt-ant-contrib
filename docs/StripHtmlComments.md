@@ -11,7 +11,6 @@
 
 ### Usage
 
-    ```
     <copy todir="${build.dir}">
     	<fileset dir="${data.dir}">
     		<include name="**/*.html" />
@@ -20,7 +19,6 @@
     		<striphtmlcomments />
     	</filterchain>
     </copy>
-    ```
 
 ### Features / Known issues
 
