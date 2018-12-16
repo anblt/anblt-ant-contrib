@@ -19,7 +19,16 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
      or on your CLASSPATH environment variable. 
      If you want to use one of the tasks in your project, add the line
      ```
-     <taskdef resource="anblt/ant/contrib/typedef.properties"/>
+     <taskdef resource="anblt/ant/contrib/typedef.properties">
+       <classpath>
+         <fileset dir="${lib.dir}" includes="*.jar" />
+       </classpath>
+     </typedef>
+     <typedef resource="anblt/ant/contrib/antlib.xml">
+       <classpath>
+         <fileset dir="${lib.dir}" includes="*.jar" />
+       </classpath>
+     </typedef>
      ```
      to your build file. This will register the new tasks.
 
@@ -30,6 +39,12 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
        <classpath>
          <fileset dir="${lib.dir}" includes="*.jar" />
          <pathelement location="/path/to/anblt-ant-contrib.jar"/>
+       </classpath>
+     </typedef>
+     <typedef resource="anblt/ant/contrib/antlib.xml">
+       <classpath>
+     	 <fileset dir="${lib.dir}" includes="*.jar" />
+     	 <path path="${ant.project.name}.jar" />
        </classpath>
      </typedef>
      ```
@@ -60,19 +75,19 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 
   select files if their name `<CHECKSUM>.<fileextension>` matches their actual checksum
 
-- [x] Task [`<randomchoice>`]
+- [x] Task [`<randomchoice>`](docs/RandomChoice.md)
 
-  execute `<count>` randomly selected tasks (may have duplicates in its selection)
+  select randomly `<count>` items and execute specified tasks (may have duplicates in its selection)
 
-- [x] Task [`<randomsample>`]
+- [x] Task [`<randomsample>`](docs/RandomSample.md)
 
-  execute `<count>` randomly selected tasks (does not have duplicates in its selection)
+  select randomly `<count>` items and execute specified tasks (does not have duplicates in its selection)
 
-- [x] Task [`<csvjdbc>`]
+- [x] Task [`<csvjdbc>`](docs/CsvJdbc.md)
 
   run SQL queries against .csv files
 
-- [x] Task [`<xmlrefactor>`]
+- [x] Task [`<xmlrefactor>`](docs/XmlRefactor.md)
 
   refactor .xml, .html, .svg, etc. files in different ways
 

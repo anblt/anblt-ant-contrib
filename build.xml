@@ -60,13 +60,19 @@
 		<echo>${findmatches}</echo>
 	</target>
 
-	<target name="csvjdbc" depends="register">
+	<target name="csvjdbc1" depends="register">
 		<csvjdbc csvdir="${data.dir}" property="csvjsqlout" coltypes="Integer,Integer,Integer"
-			 append="True" csvquery="SELECT MAX(pow1) AS maxval FROM numbers;" />
+			 append="True" csvquery="SELECT MAX(pow1) AS &quot;&quot; FROM numbers;" />
 		<echo message="${csvjsqlout}" />
 	</target>
 
-	<target name="randomchoice" depends="register">
+	<target name="csvjdbc2" depends="register">
+		<csvjdbc csvdir="${data.dir}" outfile="${build.dir}/csvjsql.out" coltypes="Integer,Integer,Integer" append="True">
+			<csvquery query="SELECT pow2, pow3 FROM numbers WHERE pow1 &gt;= 3 AND pow1 &lt; 7;" />
+		</csvjdbc>
+	</target>
+
+	<target name="randomchoice1" depends="register">
 		<randomchoice param="val" count="5" list="0,1,2,3,4,5,6,7,8,9" delimiter=",">
 			<sequential>
 				<echo>@{val}</echo>
@@ -74,8 +80,61 @@
 		</randomchoice>
 	</target>
 
-	<target name="randomsample" depends="register">
+	<target name="randomchoice2" depends="register">
+		<randomchoice param="val" count="3">
+			<path>
+				<fileset dir="${data.dir}" erroronmissingdir="false">
+					<include name="**/*" />
+				</fileset>
+			</path>
+
+			<sequential>
+				<echo>@{val}</echo>
+			</sequential>
+		</randomchoice>
+	</target>
+
+	<target name="randomchoice3" depends="register">
+		<randomchoice param="val" count="3">
+			<fileset dir="${data.dir}" erroronmissingdir="false">
+				<include name="**/*" />
+			</fileset>
+
+			<sequential>
+				<echo>@{val}</echo>
+			</sequential>
+		</randomchoice>
+	</target>
+
+
+	<target name="randomsample1" depends="register">
 		<randomsample param="val" count="5" list="0,1,2,3,4,5,6,7,8,9" delimiter=",">
+			<sequential>
+				<echo>@{val}</echo>
+			</sequential>
+		</randomsample>
+	</target>
+
+	<target name="randomsample2" depends="register">
+		<randomsample param="val" count="3">
+			<path>
+				<fileset dir="${data.dir}" erroronmissingdir="false">
+					<include name="**/*" />
+				</fileset>
+			</path>
+
+			<sequential>
+				<echo>@{val}</echo>
+			</sequential>
+		</randomsample>
+	</target>
+
+	<target name="randomsample3" depends="register">
+		<randomsample param="val" count="3">
+			<fileset dir="${data.dir}" erroronmissingdir="false">
+				<include name="**/*" />
+			</fileset>
+
 			<sequential>
 				<echo>@{val}</echo>
 			</sequential>
@@ -107,6 +166,6 @@
 	</target>
 
 
-	<target name="test" depends="init,striphtmlcomments,checksummapper,checksumselector,csvjdbc,randomchoice,randomsample,xml_rename_element,xml_rename_attribute">
+	<target name="test" depends="init,striphtmlcomments,checksummapper,checksumselector,csvjdbc1,csvjdbc2,randomchoice1,randomchoice2,randomchoice3,randomsample1,randomsample2,randomsample3,xml_rename_element,xml_rename_attribute">
 	</target>
 </project>
