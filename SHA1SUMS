@@ -23,6 +23,6 @@ c4f7697eccc714b72d7a6da9b26dfae09b8e70a6  classes/anblt/ant/contrib/RandomSample
 928e3842615502537b96b5b924fa40348743e6e2  classes/anblt/ant/contrib/StripHtmlComments.class
 c432272cc099f4bcf170efa8c0c22d40fac71b0d  classes/anblt/ant/contrib/typedef.properties
 013deeab90e25304d4e8a335f55b10510ab87a48  classes/anblt/ant/contrib/ValidationTask.class
-cce7b8442fe6f0280bc7c57bab6e5ceddbfaa0e5  classes/anblt/ant/contrib/XmlRefactorTask.class
+b4f965130677831a84bb858a82ae65b71dfbf5de  classes/anblt/ant/contrib/XmlRefactorTask.class
 b5534280586fc4e4393b9c2d07bc4074d253b577  classes/anblt/ant/contrib/XmlRefactorTask$Param.class
-2a761c5adea1036fc8aa64e5810311f141ebb674  anblt-ant-contrib.jar
+441364d2b4183ebc9cac5186e77de4ce5f4bea56  anblt-ant-contrib.jar
