@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="anblt-ant-contrib" default="test">
+<project name="anblt-ant-contrib" default="test" xmlns:aac="antlib:anblt.ant.contrib">
 
 	<property environment="env" />
-	<property name="lib.dir" value="lib" />
-	<property name="build.dir" value="build" />
-	<property name="data.dir" value="data" />
+	<property file="build.properties" />
 
 	<target name="init" depends="clean">
 		<mkdir dir="${build.dir}"/>
@@ -21,6 +19,13 @@
 			<classpath>
 				<fileset dir="${lib.dir}" includes="*.jar" />
 				<path location="${ant.project.name}.jar" />
+			</classpath>
+		</typedef>
+
+		<typedef resource="anblt/ant/contrib/antlib.xml" uri="antlib:anblt.ant.contrib">
+			<classpath>
+				<fileset dir="${lib.dir}" includes="*.jar" />
+				<path path="${ant.project.name}.jar" />
 			</classpath>
 		</typedef>
 	</target>
@@ -55,6 +60,53 @@
 		<echo>${findmatches}</echo>
 	</target>
 
-	<target name="test" depends="init,striphtmlcomments,checksummapper,checksumselector">
+	<target name="csvjdbc" depends="register">
+		<csvjdbc csvdir="${data.dir}" property="csvjsqlout" coltypes="Integer,Integer,Integer"
+			 append="True" csvquery="SELECT MAX(pow1) AS maxval FROM numbers;" />
+		<echo message="${csvjsqlout}" />
+	</target>
+
+	<target name="randomchoice" depends="register">
+		<randomchoice param="val" count="5" list="0,1,2,3,4,5,6,7,8,9" delimiter=",">
+			<sequential>
+				<echo>@{val}</echo>
+			</sequential>
+		</randomchoice>
+	</target>
+
+	<target name="randomsample" depends="register">
+		<randomsample param="val" count="5" list="0,1,2,3,4,5,6,7,8,9" delimiter=",">
+			<sequential>
+				<echo>@{val}</echo>
+			</sequential>
+		</randomsample>
+	</target>
+
+	<target name="xml_rename_element" depends="register">
+		<xmlrefactor outdir="${build.dir}" action="rename.element">
+			<path>
+				<fileset dir="${data.dir}" erroronmissingdir="false">
+					<include name="colors1.xml" />
+				</fileset>
+			</path>
+			<param key="match" value="colormap" />
+			<param key="replace" value="colors" />
+		</xmlrefactor>
+	</target>
+
+	<target name="xml_rename_attribute" depends="register">
+		<xmlrefactor outdir="${build.dir}" action="rename.attribute">
+			<path>
+				<fileset dir="${data.dir}" erroronmissingdir="false">
+					<include name="colors2.xml" />
+				</fileset>
+			</path>
+			<param key="match" value="compliance" />
+			<param key="replace" value="abc" />
+		</xmlrefactor>
+	</target>
+
+
+	<target name="test" depends="init,striphtmlcomments,checksummapper,checksumselector,csvjdbc,randomchoice,randomsample,xml_rename_element,xml_rename_attribute">
 	</target>
 </project>

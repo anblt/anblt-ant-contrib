@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<antlib xmlns:cur="ant:current"
+		xmlns:ac="antlib:net.sf.antcontrib"
+>
+	<presetdef name="bash">
+        <ac:shellscript shell="bash"/>
+    </presetdef>
+    <typedef name="striphtmlcomments" classname="anblt.ant.contrib.StripHtmlComments" />
+    <typedef name="stripxmlcomments" classname="anblt.ant.contrib.StripHtmlComments" />
+    <typedef name="checksumselector" classname="anblt.ant.contrib.ChecksumSelector" />
+    <typedef name="checksummapper" classname="anblt.ant.contrib.ChecksumMapper" />
+    <typedef name="xmlrefactor" classname="anblt.ant.contrib.XmlRefactorTask" />
+    <typedef name="csvjdbc" classname="anblt.ant.contrib.CsvJdbcTask" />
+    <typedef name="randomchoice" classname="anblt.ant.contrib.RandomChoiceTask" />
+    <typedef name="randomsample" classname="anblt.ant.contrib.RandomSampleTask" />
+</antlib>

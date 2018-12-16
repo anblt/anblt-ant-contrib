@@ -5,8 +5,8 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 ### Showcase for
 
 - implementaton of custom ant tasks, types, filters, selectors, mappers
-- configuration of ant properties via build.properties file
 - registration of custom tasks, types, selectors, filters, mappers via typedef.properties
+- registration of additional tasks via antlib.xml
 
 
 ### Install .jar + Register ant tasks
@@ -35,16 +35,38 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
      ```
 
 
-### Usage
+### Usage Example for Debian Linux
+    
+    root#> apt-get install openjdk-8-jre ant ant-contrib libcommons-lang3-java libcommons-io-java libcsvjdbc-java
+    user$> mkdir lib
+    user$> ln -t lib -s /usr/share/java/commons-io.jar /usr/share/java/commons-lang3.jar /usr/share/java/csvjdbc.jar
 
-- see build.xml
-- see Documentation below
+    # download .jar
+    user$> wget https://github.com/anblt/anblt-ant-contrib/blob/master/anblt-ant-contrib.jar
+    user$> ant -f build.xml
 
 
 ### Documentation
 
-- [x] [`<striphtmlcomments>`/`<stripxmlcomments>`](docs/StripHtmlComments.md)
-- [x] [`<checksummapper>`](docs/ChecksumMapper.md)
-- [x] [`<checksumselector>`](docs/ChecksumSelector.md)
+- [x] Filter [`<striphtmlcomments>`/`<stripxmlcomments>`](docs/StripHtmlComments.md)
+  strips `<!-- ... -->` comments from .xml, .html, .svg, etc. files
+
+- [x] FileNameMapper [`<checksummapper>`](docs/ChecksumMapper.md)
+  renames arbitrary files to `<CHECKSUM>.<fileextension>`
+
+- [x] FileSelector [`<checksumselector>`](docs/ChecksumSelector.md)
+  select files if their name `<CHECKSUM>.<fileextension>` matches their actual checksum
+
+- [x] Task [`<randomchoice>`]
+  execute `<count>` randomly selected tasks (may have duplicates in its selection)
+
+- [x] Task [`<randomsample>`]
+  execute `<count>` randomly selected tasks (does not have duplicates in its selection)
+
+- [x] Task [`<csvjdbc>`]
+  run SQL queries against .csv files
+
+- [x] Task [`<xmlrefactor>`]
+  refactor .xml, .html, .svg, etc. files in different ways
 
 
