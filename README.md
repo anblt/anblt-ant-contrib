@@ -49,24 +49,31 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 ### Documentation
 
 - [x] Filter [`<striphtmlcomments>`/`<stripxmlcomments>`](docs/StripHtmlComments.md)
+
   strips `<!-- ... -->` comments from .xml, .html, .svg, etc. files
 
 - [x] FileNameMapper [`<checksummapper>`](docs/ChecksumMapper.md)
+
   renames arbitrary files to `<CHECKSUM>.<fileextension>`
 
 - [x] FileSelector [`<checksumselector>`](docs/ChecksumSelector.md)
+
   select files if their name `<CHECKSUM>.<fileextension>` matches their actual checksum
 
 - [x] Task [`<randomchoice>`]
+
   execute `<count>` randomly selected tasks (may have duplicates in its selection)
 
 - [x] Task [`<randomsample>`]
+
   execute `<count>` randomly selected tasks (does not have duplicates in its selection)
 
 - [x] Task [`<csvjdbc>`]
+
   run SQL queries against .csv files
 
 - [x] Task [`<xmlrefactor>`]
+
   refactor .xml, .html, .svg, etc. files in different ways
 
 
