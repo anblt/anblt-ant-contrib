@@ -8,6 +8,7 @@
 
 - rename element (composite or leaf) leaving it's attributes untouched
 
+    ```
     <xmlrefactor outdir="${build.dir}" action="rename.element">
         <path>
             <fileset dir="${data.dir}" erroronmissingdir="false">
@@ -17,9 +18,11 @@
         <param key="match" value="colormap" />
         <param key="replace" value="colors" />
     </xmlrefactor>
+    ```
 
 - rename element attribute
 
+    ```
     <xmlrefactor outdir="${build.dir}" action="rename.attribute">
         <path>
             <fileset dir="${data.dir}" erroronmissingdir="false">
@@ -29,4 +32,5 @@
         <param key="match" value="compliance" />
         <param key="replace" value="abc" />
     </xmlrefactor>
+    ```
 

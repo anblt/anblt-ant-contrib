@@ -8,6 +8,7 @@
 
 - select `<count>` files from FileSet and echo their filepath
 
+    ```
     <randomchoice param="val" count="3">
     	<fileset dir="${data.dir}" erroronmissingdir="false">
     		<include name="**/*" />
@@ -17,3 +18,4 @@
     		<echo>@{val}</echo>
     	</sequential>
     </randomchoice>
+    ```
