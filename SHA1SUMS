@@ -10,12 +10,12 @@ a06a780a821552f23684ffbc2264b1f97b7ec406  classes/anblt/ant/contrib/antlib.xml
 c3fdbc0707f557de34eb2f2833f040d5d638e3b2  classes/anblt/ant/contrib/CsvJdbcTask$CsvQuery.class
 e74c92ad6b4926c29593927a9ff64f59b94b66f1  classes/anblt/ant/contrib/OutputProviderTask$1MyPrintStream.class
 08b5506a4ccc39ddcf05f5ac43559eaecd67bd0b  classes/anblt/ant/contrib/OutputProviderTask.class
-b385b44b93fb726006297d48c96af527cececa63  classes/anblt/ant/contrib/RandomChoiceTask.class
+2ce5e26f60f29429aeb207e17e7460f877b0de9f  classes/anblt/ant/contrib/RandomChoiceTask.class
 d416bbcbc94eeffd36015cb2e794937824cee9ab  classes/anblt/ant/contrib/RandomChoiceTask$HasIterator.class
 cc171c6ff231af5214a44641604454484bd43078  classes/anblt/ant/contrib/RandomChoiceTask$IteratorIterator.class
 cd22a2e10cf7c6ef533a53d17f6f5ae9ec16eade  classes/anblt/ant/contrib/RandomChoiceTask$MapIterator.class
 bbf542a3c37326f6cf4ac28d295c5d29611efc71  classes/anblt/ant/contrib/RandomChoiceTask$ReflectIterator.class
-e930e81410cbb735d9044c7667bad39a9bff9a3d  classes/anblt/ant/contrib/RandomSampleTask.class
+5fc2a52413d5c3848758643d19a5ff44f6e33b96  classes/anblt/ant/contrib/RandomSampleTask.class
 649fc8ee6851622d87c992a2a08bb3e7079d26f5  classes/anblt/ant/contrib/RandomSampleTask$HasIterator.class
 c4f7697eccc714b72d7a6da9b26dfae09b8e70a6  classes/anblt/ant/contrib/RandomSampleTask$IteratorIterator.class
 054cbbdcf224026c039dc3d2b3c63cd7a3395af7  classes/anblt/ant/contrib/RandomSampleTask$MapIterator.class
@@ -23,6 +23,8 @@ c4f7697eccc714b72d7a6da9b26dfae09b8e70a6  classes/anblt/ant/contrib/RandomSample
 928e3842615502537b96b5b924fa40348743e6e2  classes/anblt/ant/contrib/StripHtmlComments.class
 c432272cc099f4bcf170efa8c0c22d40fac71b0d  classes/anblt/ant/contrib/typedef.properties
 013deeab90e25304d4e8a335f55b10510ab87a48  classes/anblt/ant/contrib/ValidationTask.class
-b4f965130677831a84bb858a82ae65b71dfbf5de  classes/anblt/ant/contrib/XmlRefactorTask.class
+3a5cc8210c5f6afedbca839c350f92c322fd3716  classes/anblt/ant/contrib/XmlRefactorTask$1.class
+8ddce1ab92d71bd70fd4e3600599bec93dafa407  classes/anblt/ant/contrib/XmlRefactorTask$Action.class
+1ba3e04854ddab9a4b4b7b60f353d62f0c56f2b3  classes/anblt/ant/contrib/XmlRefactorTask.class
 b5534280586fc4e4393b9c2d07bc4074d253b577  classes/anblt/ant/contrib/XmlRefactorTask$Param.class
-441364d2b4183ebc9cac5186e77de4ce5f4bea56  anblt-ant-contrib.jar
+676e44e319af1555c09b93e1afcde5a3fee12636  anblt-ant-contrib.jar

@@ -9,6 +9,13 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 - registration of additional tasks via antlib.xml
 
 
+### Files and Directories
+
+- `data` – input files
+- `build` – output files
+- `diff` – diff files, showing the effect of certain tasks applied to input files
+
+
 ### Install .jar + Register ant tasks
 
 1. Download .jar file
@@ -52,12 +59,18 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 
 ### Usage Example for Debian Linux
     
+    # if you don't want to rely on libs provided by this project, you can install them on your own
     root#> apt-get install openjdk-8-jre ant ant-contrib libcommons-lang3-java libcommons-io-java libcsvjdbc-java
-    user$> mkdir lib
-    user$> ln -t lib -s /usr/share/java/commons-io.jar /usr/share/java/commons-lang3.jar /usr/share/java/csvjdbc.jar
+    user$> mkdir lib && ln -t lib -s /usr/share/java/{commons-io,commons-lang3,csvjdbc}.jar
 
     # download .jar
-    user$> wget https://github.com/anblt/anblt-ant-contrib/blob/master/anblt-ant-contrib.jar
+    user$> wget https://github.com/anblt/anblt-ant-contrib/blob/master/{anblt-ant-contrib.jar,SHA1SUMS,SHA512SUMS}
+
+    # verify downloaded .jar file using SHA1SUMS and/or SHA512SUMS
+    user$> fgrep "anblt-ant-contrib.jar" SHA1SUMS | sha1sum -c
+    user$> fgrep "anblt-ant-contrib.jar" SHA512SUMS | sha512sum -c
+
+    # run
     user$> ant -f build.xml
 
 
@@ -83,12 +96,14 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 
   select randomly `<count>` items and execute specified tasks (does not have duplicates in its selection)
 
-- [x] Task [`<csvjdbc>`](docs/CsvJdbc.md)
+- [x] **Task [`<csvjdbc>`](docs/CsvJdbc.md)**
 
   run SQL queries against .csv files
 
-- [x] Task [`<xmlrefactor>`](docs/XmlRefactor.md)
+- [x] **Task [`<xmlrefactor>`](docs/XmlRefactor.md)**
 
   refactor .xml, .html, .svg, etc. files in different ways
 
+  - **`rename.element`** – rename element (composite or leaf) leaving it's attributes/subelements untouched
+  - **`rename.attribute`** – rename element attribute
 

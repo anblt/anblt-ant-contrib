@@ -33,7 +33,7 @@
 	<target name="striphtmlcomments" depends="register">
 		<copy todir="${build.dir}">
 			<fileset dir="${data.dir}">
-				<include name="**/*.html" />
+				<include name="Comments.html" />
 			</fileset>
 			<filterchain>
 				<striphtmlcomments />
@@ -148,7 +148,7 @@
 					<include name="colors1.xml" />
 				</fileset>
 			</path>
-			<param key="match" value="colormap" />
+			<param key="match" value="//colormap" />
 			<param key="replace" value="colors" />
 		</xmlrefactor>
 	</target>
@@ -160,7 +160,7 @@
 					<include name="colors2.xml" />
 				</fileset>
 			</path>
-			<param key="match" value="compliance" />
+			<param key="match" value="//@compliance" />
 			<param key="replace" value="abc" />
 		</xmlrefactor>
 	</target>
