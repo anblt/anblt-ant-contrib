@@ -1,4 +1,4 @@
-# Custom Ant Tasks, Types, Selectors, Filters, Mappers
+# Custom Ant Tasks, Types, Selectors, Filters and Mappers
 
 Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in build.xml ant build files
 
@@ -23,7 +23,7 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 1. You now have the choice:
 
    - Copy the .jar file to the lib directory of your Ant installation (e.g. /usr/share/ant/lib/),
-     or on your CLASSPATH environment variable. 
+     or on your CLASSPATH environment variable.
      If you want to use one of the tasks in your project, add the line
      ```
      <taskdef resource="anblt/ant/contrib/typedef.properties">
@@ -58,7 +58,7 @@ Collection of Custom Ant Tasks, Types, Selectors, Filters, Mappers to be used in
 
 
 ### Usage Example for Debian Linux
-    
+
     # if you don't want to rely on libs provided by this project, you can install them on your own
     root#> apt-get install openjdk-8-jre ant ant-contrib libcommons-lang3-java libcommons-io-java libcsvjdbc-java
     user$> mkdir lib && ln -t lib -s /usr/share/java/{commons-io,commons-lang3,csvjdbc}.jar
